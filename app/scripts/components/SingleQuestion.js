@@ -3,6 +3,8 @@ import {hashHistory} from 'react-router';
 
 import $ from 'jquery';
 
+import store from '../store';
+
 const SingleQuestion = React.createClass({
   getInitialState: function() {
     return {
@@ -26,17 +28,18 @@ const SingleQuestion = React.createClass({
             return question.value;
           });
         }
-        this.setState(question)
+        store.push(question);
+        this.setState(question);
       }
     })
   },
   selectQuestion: function(e) {
     console.log(this.state.category_id);
-    hashHistory.push(`/game/${this.state.category_id}-${this.state.id}`);
+    hashHistory.push(`/game/${this.state.id}`);
   },
   render: function() {
     let question;
-    if (this.state.id !== null) {
+    if (this.state.id === null) {
     }
     return(
       <li onClick={this.selectQuestion}>
