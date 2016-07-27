@@ -1,0 +1,23 @@
+#gameboard {
+  width: 95%;
+  margin: 0 auto; }
+  #gameboard ul {
+    float: left;
+    width: 16.6%;
+    padding: 0;
+    box-sizing: border-box; }
+    #gameboard ul li:first-child {
+      font-weight: bolder;
+      font-size: 1rem;
+      line-height: 1 rem; }
+    #gameboard ul li {
+      list-style-type: none;
+      height: 75px;
+      background: pink;
+      margin: 2px;
+      font-size: 2rem;
+      text-align: center; }
+      #gameboard ul li h2 {
+        margin: 0; }
+
+/*# sourceMappingURL=main.css.map */

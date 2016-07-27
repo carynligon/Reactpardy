@@ -1,0 +1,26 @@
+#gameboard {
+  width: 95%;
+  margin: 0 auto;
+  ul {
+    float: left;
+    width: 16.6%;
+    padding: 0;
+    box-sizing: border-box;
+    li:first-child {
+      font-weight: bolder;
+      font-size: 1rem;
+      line-height: 1 rem;
+    }
+    li {
+      list-style-type: none;
+      height: 75px;
+      background: pink;
+      margin: 2px;
+      font-size: 2rem;
+      text-align: center;
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+}
