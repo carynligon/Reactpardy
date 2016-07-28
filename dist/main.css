@@ -12,12 +12,59 @@
       line-height: 1 rem; }
     #gameboard ul li {
       list-style-type: none;
-      height: 75px;
-      background: pink;
+      height: 60px;
+      background: #100b9b;
+      border-bottom: 5px solid #0e0983;
+      border-right: 5px solid #0e0983;
+      color: #feb74a;
       margin: 2px;
       font-size: 2rem;
       text-align: center; }
       #gameboard ul li h2 {
         margin: 0; }
+
+.modal-container {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10% 0 0; }
+  .modal-container h3 {
+    position: relative;
+    left: 46%;
+    top: 150px; }
+  .modal-container #backto-game {
+    position: relative;
+    left: 46%;
+    top: 150px; }
+  .modal-container form {
+    width: 650px;
+    height: 300px;
+    margin: 0 auto;
+    background: #fff; }
+    .modal-container form .question-text {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 10%; }
+
+.user-answer {
+  text-align: center; }
+  .user-answer #user-guess {
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.5rem; }
+  .user-answer #submit-user-guess {
+    background: none;
+    margin-left: 2%;
+    border: none;
+    padding: 7px; }
+
+input:focus {
+  outline: none; }
+
+a {
+  text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

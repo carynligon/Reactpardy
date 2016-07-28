@@ -34,12 +34,11 @@ const SingleQuestion = React.createClass({
     })
   },
   selectQuestion: function(e) {
-    console.log(this.state.category_id);
     hashHistory.push(`/game/${this.state.id}`);
   },
   render: function() {
     let question;
-    if (this.state.id === null) {
+    if (!this.model) {
     }
     return(
       <li onClick={this.selectQuestion}>

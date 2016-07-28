@@ -13,8 +13,11 @@
     }
     li {
       list-style-type: none;
-      height: 75px;
-      background: pink;
+      height: 60px;
+      background: $primary-blue;
+      border-bottom: 5px solid darken($primary-blue, 5%);
+      border-right: 5px solid darken($primary-blue, 5%);
+      color: $primary-yellow;
       margin: 2px;
       font-size: 2rem;
       text-align: center;
@@ -22,5 +25,51 @@
         margin: 0;
       }
     }
+  }
+}
+
+.modal-container {
+  position: fixed;
+  background: rgba(black, .7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10% 0 0;
+  h3 {
+    position: relative;
+    left: 46%;
+    top: 150px;
+  }
+  #backto-game {
+    position: relative;
+    left: 46%;
+    top: 150px;
+  }
+  form {
+    width: 650px;
+    height: 300px;
+    margin: 0 auto;
+    background: $white;
+    .question-text {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 10%;
+    }
+  }
+}
+
+.user-answer {
+  text-align: center;
+  #user-guess {
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  #submit-user-guess {
+    background: none;
+    margin-left: 2%;
+    border: none;
+    padding: 7px;
   }
 }

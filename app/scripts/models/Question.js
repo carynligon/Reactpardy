@@ -1,7 +1,11 @@
 import Backbone from 'backbone';
 
 const Question = Backbone.Model.extend({
-  urlRoot: ''
+  idAttribute: 'id',
+  urlRoot: '',
+  defaults: {
+    result: null
+  }
 });
 
 export default Question;
