@@ -8,15 +8,14 @@ import store from '../store';
 const QuestionModal = React.createClass({
   getInitialState: function() {
     return {
-      data: {}
+      data: {},
+      result: null
     }
   },
   componentDidMount: function() {
     let id = this.props.params.question;
     console.log(store.questionCollection.data);
-    store.questionCollection.data.on('update change', () => {
-      this.setState({data: store.questionCollection.data.get(id).toJSON()});
-    });
+    this.setState({data: store.questionCollection.data.get(id).toJSON()});
   },
   validateAnswer: function(e) {
     e.preventDefault();
@@ -24,10 +23,13 @@ const QuestionModal = React.createClass({
     let answer = this.state.data.answer;
     if (guess === answer) {
       console.log('correct');
+      this.setState({result: 'correct'});
     } else {
       console.log('incorrect ' + answer + ' is the right answer');
+      this.setState({result: 'incorrect'});
     }
     this.removeQuestion();
+    document.querySelector('#modal-question').style.display = 'block';
     document.querySelector('#backto-game').style.display = 'block';
   },
   removeQuestion: function() {
@@ -41,7 +43,6 @@ const QuestionModal = React.createClass({
     hashHistory.push('/game');
   },
   render: function() {
-    console.log(this.state.data.question);
     let question;
     let result;
     if (this.state.data.question) {
@@ -52,7 +53,7 @@ const QuestionModal = React.createClass({
     };
     return (
       <div className="modal-container">
-        <h3>{result}</h3>
+        <h3 id="modal-question" style={styles}>{this.state.result}, the correct answer is {this.state.data.answer}</h3>
         <button style={styles} id="backto-game" onClick={this.goToGame}>Continue</button>
         <form className="question-form" onSubmit={this.validateAnswer}>
           <p className="question-text">{this.state.data.question}</p>
