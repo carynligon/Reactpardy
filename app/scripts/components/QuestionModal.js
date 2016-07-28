@@ -1,13 +1,14 @@
 import React from 'react';
 import $ from 'jquery';
+import _ from 'underscore';
 
 import store from '../store';
 
 const QuestionModal = React.createClass({
   render: function() {
-    console.log(store);
+    console.log(store.questionCollection.data);
       let questionId = this.props.params.question;
-      let question = store.filter((question) => {
+      let question = store.questionCollection.data.filter((question) => {
         return question.id === Number(questionId);
       });
       console.log(question[0].question);

@@ -28,7 +28,7 @@ const SingleQuestion = React.createClass({
             return question.value;
           });
         }
-        store.push(question);
+        store.questionCollection.data.add(question);
         this.setState(question);
       }
     })
