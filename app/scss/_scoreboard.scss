@@ -1,3 +1,18 @@
 .scoreboard {
-  background: $primary-blue;
+  background: linear-gradient(to right, $primary-blue, $primary-pink);
+  color: $white;
+  position: absolute;
+  bottom: 150px;
+  width: 400px;
+  border-radius: 10px;
+  #question-results {
+    display: inline-block;
+    width: 250px;
+    p {
+      padding-left: 10px;
+    }
+  }
+  #total-money {
+    display: inline-block;
+  }
 }

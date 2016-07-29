@@ -12,27 +12,19 @@
       height: 60px;
       padding: 0;
       line-height: 1 rem;
-      &:hover {
-        background: #f1f0f3;
-        color: $black;
-        border-bottom: 5px solid darken(#f1f0f3, 5%);
-        border-right: 5px solid darken(#f1f0f3, 5%);
-      }
     }
     li {
       list-style-type: none;
       padding: 3px;
       background: #f1f0f3;
-      border-bottom: 5px solid darken(#f1f0f3, 5%);
-      border-right: 5px solid darken(#f1f0f3, 5%);
+      border-radius: 5px;
       color: $black;
       margin: 5px;
       font-size: 1.7rem;
       text-align: center;
       &:hover {
         background: $primary-pink;
-        border-bottom: 5px solid darken($primary-pink, 5%);
-        border-right: 5px solid darken($primary-pink, 5%);
+        transition: background 0.5s ease-in-out;
         color: $white;
       }
       h2 {
