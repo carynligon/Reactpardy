@@ -24,9 +24,16 @@ const QuestionModal = React.createClass({
     if (guess === answer) {
       console.log('correct');
       this.setState({result: 'correct'});
+      store.score.set({
+        correct: store.score.correct + 1,
+        money: store.score.money + this.state.data.value
+      });
     } else {
       console.log('incorrect ' + answer + ' is the right answer');
       this.setState({result: 'incorrect'});
+      store.score.set({
+        incorrect: store.score.incorrect + 1,
+      });
     }
     this.removeQuestion();
     document.querySelector('#modal-question').style.display = 'block';

@@ -35,6 +35,7 @@ const SingleQuestion = React.createClass({
   },
   selectQuestion: function(e) {
     hashHistory.push(`/game/${this.state.id}`);
+    document.getElementById(`${this.state.id}`).style.display = 'none';
   },
   render: function() {
     let question;
@@ -42,7 +43,7 @@ const SingleQuestion = React.createClass({
     }
     return(
       <li onClick={this.selectQuestion}>
-        <h2>{this.props.value}</h2>
+        <h2 id={this.state.id}>${this.props.value}</h2>
       </li>
     );
   }

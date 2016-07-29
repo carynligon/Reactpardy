@@ -10,17 +10,27 @@
       font-weight: bolder;
       font-size: 1rem;
       line-height: 1 rem;
+      &:hover {
+        background: #f1f0f3;
+        color: $black;
+      }
     }
     li {
       list-style-type: none;
       height: 60px;
-      background: $primary-blue;
-      border-bottom: 5px solid darken($primary-blue, 5%);
-      border-right: 5px solid darken($primary-blue, 5%);
-      color: $primary-yellow;
+      background: #f1f0f3;
+      border-bottom: 5px solid darken(#f1f0f3, 5%);
+      border-right: 5px solid darken(#f1f0f3, 5%);
+      color: $black;
       margin: 2px;
       font-size: 2rem;
       text-align: center;
+      &:hover {
+        background: $primary-pink;
+        border-bottom: 5px solid darken($primary-pink, 5%);
+        border-right: 5px solid darken($primary-pink, 5%);
+        color: $white;
+      }
       h2 {
         margin: 0;
       }
