@@ -4,11 +4,7 @@ import store from '../store';
 
 const Scoreboard = React.createClass({
   getInitialState: function() {
-    return {
-      correct: store.score.correct,
-      incorrect: store.score.incorrect,
-      money: store.score.money
-    };
+    return store.score.toJSON();
   },
   componentDidMount: function() {
     store.score.on('change', () => {
@@ -16,9 +12,10 @@ const Scoreboard = React.createClass({
       console.log('changed');
       console.log(this.state);
     });
-    store.score.hasChanged();
+    store.score.get('correct');
   },
   render: function() {
+    console.log(this.state);
     return (
       <div className="scoreboard">
         <div id="question-results">

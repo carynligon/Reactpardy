@@ -14,27 +14,24 @@ const QuestionModal = React.createClass({
   },
   componentDidMount: function() {
     let id = this.props.params.question;
-    console.log(store.questionCollection.data);
+    console.log(store.questionCollection.data.length);
     this.setState({data: store.questionCollection.data.get(id).toJSON()});
+    if (store.questionCollection.data.length === 1) {
+      hashHistory.push('/results')
+    }
   },
   validateAnswer: function(e) {
     e.preventDefault();
     let guess = document.getElementById('user-guess').value;
     let answer = this.state.data.answer;
     if (guess === answer) {
-      console.log('correct');
       this.setState({result: 'correct'});
-      store.score.set({
-        correct: store.score.correct + 1,
-        money: store.score.money + this.state.data.value
-      });
+      store.score.correctQuestion(this.state.data.value);
     } else {
-      console.log('incorrect ' + answer + ' is the right answer');
       this.setState({result: 'incorrect'});
-      store.score.set({
-        incorrect: store.score.incorrect + 1,
-      });
+      store.score.incorrectQuestion();
     }
+    store.questionCollection.data.remove(this.props.params.question);
     this.removeQuestion();
     document.querySelector('#modal-question').style.display = 'block';
     document.querySelector('#backto-game').style.display = 'block';

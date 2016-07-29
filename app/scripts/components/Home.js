@@ -8,7 +8,7 @@ const Home = React.createClass({
   },
   render: function() {
     return (
-      <form>
+      <form id="start-game">
         <input type="submit" id="begin-btn" value="Start New Game" onClick={this.toGameBoard}/>
       </form>
     );
