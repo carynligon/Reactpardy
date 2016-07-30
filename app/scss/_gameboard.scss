@@ -12,10 +12,14 @@
       height: 60px;
       padding: 0;
       line-height: 1 rem;
+      &:hover {
+        background: #f1f0f3;
+        color: $black;
+      }
     }
     li {
       list-style-type: none;
-      padding: 3px;
+      height: 50px;
       background: #f1f0f3;
       border-radius: 5px;
       color: $black;

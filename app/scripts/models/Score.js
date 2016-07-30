@@ -12,9 +12,10 @@ const Score = Backbone.Model.extend({
       money: Number(this.get('money')) + Number(value)
     });
   },
-  incorrectQuestion: function() {
+  incorrectQuestion: function(value) {
     this.set({
-      incorrect: this.get('incorrect') + 1
+      incorrect: this.get('incorrect') + 1,
+      money: Number(this.get('money')) - Number(value)
     });
   }
 });

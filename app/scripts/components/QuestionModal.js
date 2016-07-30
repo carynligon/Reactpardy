@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import _ from 'underscore';
 import {hashHistory} from 'react-router';
+import Sifter from 'sifter';
 
 import store from '../store';
 
@@ -22,14 +23,20 @@ const QuestionModal = React.createClass({
   },
   validateAnswer: function(e) {
     e.preventDefault();
-    let guess = document.getElementById('user-guess').value;
-    let answer = this.state.data.answer;
+    let guess = document.getElementById('user-guess').value.toLowerCase();
+    let answer = this.state.data.answer.toLowerCase();
+    answer = answer.replace('<i>', '');
+    answer = answer.replace('</i>', '');
+    answer = answer.replace(',', '');
+    answer = answer.replace('.', '');
+    answer = answer.replace('the', '');
+    answer = answer.trim();
     if (guess === answer) {
       this.setState({result: 'correct'});
       store.score.correctQuestion(this.state.data.value);
     } else {
       this.setState({result: 'incorrect'});
-      store.score.incorrectQuestion();
+      store.score.incorrectQuestion(this.state.data.value);
     }
     store.questionCollection.data.remove(this.props.params.question);
     this.removeQuestion();
