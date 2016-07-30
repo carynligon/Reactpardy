@@ -12,9 +12,12 @@
       height: 60px;
       padding: 0;
       line-height: 1 rem; }
+      #gameboard ul li:first-child:hover {
+        background: #f1f0f3;
+        color: #373635; }
     #gameboard ul li {
       list-style-type: none;
-      padding: 3px;
+      height: 50px;
       background: #f1f0f3;
       border-radius: 5px;
       color: #373635;
@@ -90,16 +93,23 @@
   background: linear-gradient(to right, #100b9b, #d72c65);
   color: #fff;
   position: absolute;
-  bottom: 150px;
-  width: 400px;
-  border-radius: 10px; }
+  bottom: 100px;
+  width: 250px;
+  border-radius: 10px;
+  font-family: avenir, sans-serif; }
   .scoreboard #question-results {
     display: inline-block;
-    width: 250px; }
+    width: 100px; }
     .scoreboard #question-results p {
       padding-left: 10px; }
   .scoreboard #total-money {
     display: inline-block; }
+    .scoreboard #total-money h2 {
+      font-size: 2rem;
+      margin: 0;
+      position: relative;
+      bottom: 10px;
+      left: 30px; }
 
 input:focus {
   outline: none; }
