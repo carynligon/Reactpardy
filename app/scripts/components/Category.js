@@ -13,7 +13,6 @@ const Category = React.createClass({
   },
   componentDidMount: function() {
     $.ajax({
-      type: 'GET',
       url: `http://jservice.io/api/category?id=${this.props.categoryId}`,
       success: (data) => {
         this.setState(data);
