@@ -51,7 +51,7 @@ const QuestionModal = React.createClass({
   },
   goToGame: function() {
     store.questionCollection.data.remove(this.model);
-    hashHistory.push('/game');
+    hashHistory.push('/');
   },
   render: function() {
     let question;

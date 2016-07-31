@@ -34,7 +34,7 @@ const SingleQuestion = React.createClass({
     })
   },
   selectQuestion: function(e) {
-    hashHistory.push(`/game/${this.state.id}`);
+    hashHistory.push(`/${this.state.id}`);
     document.getElementById(`${this.state.id}`).style.display = 'none';
   },
   render: function() {

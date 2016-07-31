@@ -28,6 +28,10 @@
       background: darken($primary-pink, 10%);
     }
   }
+  p {
+    color: $white;
+    font-size: 0.8rem;
+  }
 }
 
 .signup-form {
@@ -46,9 +50,9 @@
 
 .login-form {
   &::before {
-    position: absolute;
-    bottom: 119px;
-    right: 125px;
+    position: relative;
+    bottom: 28px;
+    right: 40px;
     content: '';
     width: 0;
     height: 0;
