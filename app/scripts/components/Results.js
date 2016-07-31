@@ -1,25 +1,17 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../store';
 
 const Results = React.createClass({
+  newGame: function() {
+    store.questionCollection.data.reset();
+    hashHistory.push('/');
+  },
   render: function() {
-    let message;
-    if (store.score.correct > 25) {
-      message = `You're a Champion!`
-    } else if (store.score.correct > 18 && store.score.correct < 25) {
-      message = `Good job!`
-    } else if (store.score.correct > 12 && store.score.correct < 18) {
-      message = `Maybe you'll do better next time`
-    } else if (store.score.correct < 12) {
-      message = `Please stop...`
-    }
-    console.log();
     return (
-      <div id="results">
-        <p id="message">{message}</p>
-        <p id="total-earnings">${store.score.money}</p>
-        <button id="play-again">Play Again!</button>
+      <div id="results-page">
+        <button id="play-again" onClick={this.newGame}>Play Again!</button>
       </div>
     );
   }

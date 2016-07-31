@@ -1,8 +1,17 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
+
+import store from '../store';
 
 import Category from './Category';
 import Scoreboard from './Scoreboard';
 import Nav from './Nav';
+
+// <Category categoryId='4'/>
+// <Category categoryId='5'/>
+// <Category categoryId='75'/>
+// <Category categoryId='672'/>
+// <Category categoryId='800'/>
 
 const Game = React.createClass({
   render: function() {
@@ -13,11 +22,6 @@ const Game = React.createClass({
         <Nav/>
         <div id="gameboard">
           <Category categoryId='1'/>
-          <Category categoryId='4'/>
-          <Category categoryId='5'/>
-          <Category categoryId='75'/>
-          <Category categoryId='672'/>
-          <Category categoryId='800'/>
           {this.props.children}
           <Scoreboard />
         </div>

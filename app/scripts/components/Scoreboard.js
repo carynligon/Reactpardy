@@ -1,6 +1,8 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../store';
+import Results from './Results';
 
 const Scoreboard = React.createClass({
   getInitialState: function() {
@@ -15,16 +17,24 @@ const Scoreboard = React.createClass({
     store.score.get('correct');
   },
   render: function() {
-    console.log(this.state);
+    let sign;
+    if (this.state.money < 0) {
+      sign = '-$';
+    } else {
+      sign = '$'
+    }
     return (
-      <div className="scoreboard">
-        <div id="question-results">
-          <p id="answered-correctly">Correct:{this.state.correct}</p>
-          <p id="answered-incorrectly">Incorrect: {this.state.incorrect}</p>
+      <div className="results-wrapper">
+        <div className="scoreboard">
+          <div id="question-results">
+            <p id="answered-correctly">Correct:{this.state.correct}</p>
+            <p id="answered-incorrectly">Incorrect: {this.state.incorrect}</p>
+          </div>
+          <div id="total-money">
+            <h2>{sign}{Math.abs(this.state.money)}</h2>
+          </div>
         </div>
-        <div id="total-money">
-          <h2>${this.state.money}</h2>
-        </div>
+        <Results/>
       </div>
     );
   }

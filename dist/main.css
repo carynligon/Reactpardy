@@ -91,6 +91,27 @@
       bottom: 10px;
       left: 30px; }
 
+#results-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  display: none; }
+  #results-page #play-again {
+    margin-top: 250px;
+    padding: 70px 150px;
+    font-size: 3rem;
+    color: #d72c65;
+    background: #fff;
+    border: none;
+    border-radius: 15px; }
+    #results-page #play-again:hover {
+      background: #d72c65;
+      color: #fff; }
+
 nav {
   background: #d72c65;
   margin-bottom: 50px; }
@@ -176,6 +197,8 @@ ul {
 input:focus {
   outline: none;
   background: none; }
+input:active {
+  outline: 0; }
 
 a {
   text-decoration: none; }

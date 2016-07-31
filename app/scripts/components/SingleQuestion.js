@@ -34,8 +34,13 @@ const SingleQuestion = React.createClass({
     })
   },
   selectQuestion: function(e) {
-    hashHistory.push(`/${this.state.id}`);
-    document.getElementById(`${this.state.id}`).style.display = 'none';
+    let id = this.state.id;
+    if (store.questionCollection.data.get(id)) {
+      hashHistory.push(`/${this.state.id}`);
+      document.getElementById(`${this.state.id}`).style.display = 'none';
+    } else {
+      console.log('invalid');
+    }
   },
   render: function() {
     let question;

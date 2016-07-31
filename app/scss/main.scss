@@ -21,6 +21,9 @@ input {
     outline: none;
     background: none;
   }
+  &:active {
+    outline: 0;
+  }
 }
 
 a {

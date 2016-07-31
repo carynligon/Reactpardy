@@ -24,3 +24,27 @@
     }
   }
 }
+
+#results-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(black, .7);
+  text-align: center;
+  display: none;
+  #play-again {
+    margin-top: 250px;
+    padding: 70px 150px;
+    font-size: 3rem;
+    color: $primary-pink;
+    background: $white;
+    border: none;
+    border-radius: 15px;
+    &:hover {
+      background: $primary-pink;
+      color: $white;
+    }
+  }
+}

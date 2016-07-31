@@ -14,7 +14,6 @@ const router = (
     <Route path="/signup" component ={Signup} />
     <Route path="/:question" component={QuestionModal}/>
   </Route>
-  <Route path="/results" component={Results}/>
   </Router>
 );
 
