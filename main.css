@@ -138,6 +138,9 @@ ul:first-child {
     margin-bottom: 0; }
     .signup-form input[type="submit"]:hover, .login-form input[type="submit"]:hover {
       background: #af2150; }
+  .signup-form p, .login-form p {
+    color: #fff;
+    font-size: 0.8rem; }
 
 .signup-form::before {
   position: absolute;
@@ -151,9 +154,9 @@ ul:first-child {
   border-bottom: 10px solid #d72c65; }
 
 .login-form::before {
-  position: absolute;
-  bottom: 119px;
-  right: 125px;
+  position: relative;
+  bottom: 28px;
+  right: 40px;
   content: '';
   width: 0;
   height: 0;
@@ -171,7 +174,8 @@ ul {
     list-style-type: none; }
 
 input:focus {
-  outline: none; }
+  outline: none;
+  background: none; }
 
 a {
   text-decoration: none; }
