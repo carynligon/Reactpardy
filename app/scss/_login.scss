@@ -1,0 +1,59 @@
+.signup-form, .login-form {
+  position: absolute;
+  right: 20px;
+  top: 67px;
+  width: 190px;
+  background: $primary-pink;
+  text-align: center;
+  a {
+    color: $white;
+    font-size: 0.8rem;
+  }
+  input {
+    margin: 10px auto;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    display: block;
+  }
+  input[type="submit"] {
+    background: darken($primary-pink, 5%);
+    color: $white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 0;
+    &:hover {
+      background: darken($primary-pink, 10%);
+    }
+  }
+}
+
+.signup-form {
+  &::before {
+    position: absolute;
+    bottom: 152px;
+    right: 20px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $primary-pink;
+  }
+}
+
+.login-form {
+  &::before {
+    position: absolute;
+    bottom: 119px;
+    right: 125px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $primary-pink;
+  }
+}

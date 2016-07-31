@@ -2,18 +2,22 @@ import React from 'react';
 import session from '../models/Session';
 import {hashHistory, Link} from 'react-router';
 
-const Login = React.createClass({
-  loginUser: function(e) {
+import store from '../store';
+
+
+const Signup = React.createClass({
+  newUser: function(e) {
     e.preventDefault();
+    let name = this.refs.name.value;
     let username = this.refs.username.value;
     let password = this.refs.password.value;
-    session.save({
+    store.userCollection.create({
       username: username,
-      password: password
+      password: password,
+      name: name
     }, {
-      success: function(model, response) {
-        window.localStorage.setItem('authtoken', response._kmd.authtoken);
-        model.unset('password');
+      success: function(response) {
+        console.log('success: ' + response);
         hashHistory.push('/');
       },
       error: function(response) {
@@ -23,7 +27,8 @@ const Login = React.createClass({
   },
   render: function() {
     return (
-      <form className="login-form" onSubmit={this.loginUser}>
+      <form className="signup-form" onSubmit={this.newUser}>
+        <input id="name" type="text" name="name" placeholder="name" ref="name"/>
         <input id="username" type="text" name="username" placeholder="username" ref="username"/>
         <input id="password" type="password" name="password" placeholder="password" ref="password"/>
         <input type="submit" name="submit" value="submit"/>
@@ -32,4 +37,4 @@ const Login = React.createClass({
   }
 });
 
-export default Login;
+export default Signup;

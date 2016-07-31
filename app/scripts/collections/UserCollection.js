@@ -7,6 +7,4 @@ const UserCollection = Backbone.Collection.extend({
   model: UserMod
 });
 
-let userCollection = new UserCollection();
-
-export default userCollection;
+export default UserCollection;

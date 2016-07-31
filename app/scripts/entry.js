@@ -11,7 +11,6 @@ import router from './router';
 $(document).ajaxSend(function(evt, xhrAjax, jqueryAjax) {
   if (jqueryAjax.url.indexOf('jservice') === -1) {
     if (localStorage.getItem('authtoken')) {
-      jqueryAjax.setRequestHeader()
       xhrAjax.setRequestHeader('Authorization', 'Kinvey ' + localStorage.authtoken);
     } else {
       xhrAjax.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);

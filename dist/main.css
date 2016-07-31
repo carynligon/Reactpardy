@@ -69,26 +69,6 @@
     border: none;
     padding: 7px; }
 
-#start-game {
-  width: 200px;
-  padding: 100px 150px;
-  margin: 200px auto;
-  border-radius: 15px;
-  text-align: center;
-  background: linear-gradient(to right, #100b9b, #d72c65); }
-
-#begin-btn {
-  background: #fff;
-  color: #100b9b;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  padding: 10px 20px; }
-  #begin-btn:hover {
-    color: #d72c65;
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out; }
-
 .scoreboard {
   background: linear-gradient(to right, #100b9b, #d72c65);
   color: #fff;
@@ -110,6 +90,85 @@
       position: relative;
       bottom: 10px;
       left: 30px; }
+
+nav {
+  background: #d72c65;
+  margin-bottom: 50px; }
+  nav ul {
+    display: inline-block;
+    padding: 0; }
+    nav ul li {
+      display: inline-block;
+      padding: 20px 30px; }
+      nav ul li:hover {
+        background: #c4255a; }
+      nav ul li a {
+        color: #fff; }
+
+ul:first-child {
+  width: 100%; }
+
+#login-btns {
+  float: right;
+  padding: 0; }
+
+.signup-form, .login-form {
+  position: absolute;
+  right: 20px;
+  top: 67px;
+  width: 190px;
+  background: #d72c65;
+  text-align: center; }
+  .signup-form a, .login-form a {
+    color: #fff;
+    font-size: 0.8rem; }
+  .signup-form input, .login-form input {
+    margin: 10px auto;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    display: block; }
+  .signup-form input[type="submit"], .login-form input[type="submit"] {
+    background: #c4255a;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 0; }
+    .signup-form input[type="submit"]:hover, .login-form input[type="submit"]:hover {
+      background: #af2150; }
+
+.signup-form::before {
+  position: absolute;
+  bottom: 152px;
+  right: 20px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #d72c65; }
+
+.login-form::before {
+  position: absolute;
+  bottom: 119px;
+  right: 125px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #d72c65; }
+
+body {
+  margin: 0; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    list-style-type: none; }
 
 input:focus {
   outline: none; }
