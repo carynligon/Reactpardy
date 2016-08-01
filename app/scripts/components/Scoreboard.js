@@ -18,20 +18,26 @@ const Scoreboard = React.createClass({
   },
   render: function() {
     let sign;
+    let styles;
     if (this.state.money < 0) {
+      styles = {
+        color: '#d81d1d'
+      };
       sign = '-$';
     } else {
+      styles = {
+        color: '#1eb51e'
+      };
       sign = '$'
     }
     return (
       <div className="results-wrapper">
         <div className="scoreboard">
-          <div id="question-results">
-            <p id="answered-correctly">Correct:{this.state.correct}</p>
-            <p id="answered-incorrectly">Incorrect: {this.state.incorrect}</p>
-          </div>
           <div id="total-money">
-            <h2>{sign}{Math.abs(this.state.money)}</h2>
+            <h2 style={styles}>{sign}{Math.abs(this.state.money)}</h2>
+          </div>
+          <div id="question-results">
+            <p id="answered-correctly">{this.state.correct} / {Number(this.state.incorrect) + Number(this.state.correct)} Correct</p>
           </div>
         </div>
         <Results/>

@@ -29,12 +29,14 @@ const QuestionModal = React.createClass({
     answer = answer.replace(',', '');
     answer = answer.replace('.', '');
     answer = answer.replace('the', '');
+    answer = answer.replace('a', '');
+    answer = answer.replace('&', 'and');
     answer = answer.trim();
     if (guess === answer) {
-      this.setState({result: 'correct'});
+      this.setState({result: 'Correct'});
       store.score.correctQuestion(this.state.data.value);
     } else {
-      this.setState({result: 'incorrect'});
+      this.setState({result: 'Incorrect'});
       store.score.incorrectQuestion(this.state.data.value);
     }
     store.questionCollection.data.remove(this.props.params.question);
@@ -66,8 +68,10 @@ const QuestionModal = React.createClass({
     };
     return (
       <div className="modal-container">
-        <h3 id="modal-question" style={styles}>{this.state.result}, the correct answer is {this.state.data.answer}</h3>
-        <button style={styles} id="backto-game" onClick={this.goToGame}>Continue</button>
+        <div id="modal-wrapper">
+          <h3 id="modal-question" style={styles}>{this.state.result}, the correct answer is {this.state.data.answer}</h3>
+          <button style={styles} id="backto-game" onClick={this.goToGame}>Continue</button>
+        </div>
         <form className="question-form" onSubmit={this.validateAnswer}>
           <p className="question-text">{this.state.data.question}</p>
           <div className="user-answer">

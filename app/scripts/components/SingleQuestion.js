@@ -7,6 +7,7 @@ import store from '../store';
 
 const SingleQuestion = React.createClass({
   getInitialState: function() {
+    console.log(this.props.categoryId);
     return {
       id: null,
       answer: '',
@@ -23,11 +24,6 @@ const SingleQuestion = React.createClass({
           let value = this.props.value;
           return question.value === Number(value);
         });
-        if (!question) {
-          question = data.find((question) => {
-            return question.value;
-          });
-        }
         store.questionCollection.data.add(question);
         this.setState(question);
       }

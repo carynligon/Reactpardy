@@ -5,6 +5,7 @@
   width: 190px;
   background: $primary-pink;
   text-align: center;
+  z-index: 5;
   a {
     color: $white;
     font-size: 0.8rem;
@@ -37,7 +38,7 @@
 .signup-form {
   &::before {
     position: absolute;
-    bottom: 152px;
+    bottom: 171px;
     right: 20px;
     content: '';
     width: 0;
@@ -46,18 +47,36 @@
     border-right: 10px solid transparent;
     border-bottom: 10px solid $primary-pink;
   }
+  .close-modal {
+    position: relative;
+    top: 3px;
+    background: none;
+    border: none;
+    left: 83px;
+    color: $white;
+    font-weight: 600;
+  }
 }
 
 .login-form {
   &::before {
     position: relative;
     bottom: 28px;
-    right: 40px;
+    right: 22px;
     content: '';
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid $primary-pink;
+  }
+  .close-modal {
+    position: relative;
+    top: 3px;
+    background: none;
+    border: none;
+    left: 73px;
+    color: $white;
+    font-weight: 600;
   }
 }

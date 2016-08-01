@@ -5,7 +5,7 @@ import store from '../store';
 
 const Results = React.createClass({
   newGame: function() {
-    store.questionCollection.data.reset();
+    document.getElementById('results-page').style.display = 'none';
     hashHistory.push('/');
   },
   render: function() {

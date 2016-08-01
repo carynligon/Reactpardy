@@ -1,6 +1,9 @@
 #gameboard {
   width: 95%;
+  height: 370px;
   margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $gray;
   ul {
     float: left;
     width: 16.6%;
@@ -8,19 +11,24 @@
     box-sizing: border-box;
     li:first-child {
       font-weight: bolder;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      line-height: 4rem;
       height: 60px;
       padding: 0;
       line-height: 1 rem;
+      font-family: sans-serif;
+      font-weight: 300;
+      color: #8c8c8c;
       &:hover {
-        background: #f1f0f3;
+        background: none;
         color: $black;
       }
     }
     li {
       list-style-type: none;
       height: 50px;
-      background: #f1f0f3;
+      background: rgba(#fff, .5);
       border-radius: 5px;
       color: $black;
       margin: 5px;
@@ -40,21 +48,35 @@
 
 .modal-container {
   position: fixed;
-  background: rgba(black, .7);
+  background: rgba(#000, .7);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 10% 0 0;
-  h3 {
+  z-index: 10;
+  #modal-wrapper {
     position: relative;
-    left: 25%;
-    top: 150px;
+    top: 175px;
+    width: 100%;
+    h3 {
+      width: 400px;
+      margin: 10px auto;
+      text-align: center;
+    }
   }
   #backto-game {
-    position: relative;
-    left: 46%;
-    top: 150px;
+    width: 90px;
+    margin: 0 auto;
+    background: $primary-pink;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: $white;
+    &:hover {
+      background: none;
+      color: $primary-pink;
+    }
   }
   form {
     width: 650px;

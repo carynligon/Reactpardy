@@ -12,9 +12,11 @@ const Category = React.createClass({
     }
   },
   componentDidMount: function() {
+    console.log(this.props.categoryId);
     $.ajax({
       url: `http://jservice.io/api/category?id=${this.props.categoryId}`,
       success: (data) => {
+        console.log(data);
         this.setState(data);
       }
     });
@@ -34,7 +36,7 @@ const Category = React.createClass({
     }
     return (
       <ul id={this.state.id}>
-        <li>{this.state.title}</li>
+        <li>{this.state.title.toUpperCase()}</li>
         {question1}
         {question2}
         {question3}

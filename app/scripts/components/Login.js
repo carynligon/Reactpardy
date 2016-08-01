@@ -4,6 +4,9 @@ import session from '../models/Session';
 import {hashHistory, Link} from 'react-router';
 
 const Login = React.createClass({
+  closeModal: function() {
+    hashHistory.push('/');
+  },
   loginUser: function(e) {
     e.preventDefault();
     let username = this.refs.username.value;
@@ -28,6 +31,7 @@ const Login = React.createClass({
   render: function() {
     return (
       <form className="login-form" onSubmit={this.loginUser}>
+        <button className="close-modal" onClick={this.closeModal}>X</button>
         <input id="username" type="text" name="username" placeholder="username" ref="username"/>
         <input id="password" type="password" name="password" placeholder="password" ref="password"/>
         <p id="error-message"></p>

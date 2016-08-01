@@ -6,6 +6,9 @@ import store from '../store';
 
 
 const Signup = React.createClass({
+  closeModal: function() {
+    hashHistory.push('/');
+  },
   newUser: function(e) {
     e.preventDefault();
     let name = this.refs.name.value;
@@ -28,6 +31,7 @@ const Signup = React.createClass({
   render: function() {
     return (
       <form className="signup-form" onSubmit={this.newUser}>
+        <button className="close-modal">X</button>
         <input id="name" type="text" name="name" placeholder="name" ref="name"/>
         <input id="username" type="text" name="username" placeholder="username" ref="username"/>
         <input id="password" type="password" name="password" placeholder="password" ref="password"/>

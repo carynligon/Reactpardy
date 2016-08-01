@@ -41,6 +41,7 @@ const Nav = React.createClass({
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
+          <h1 id="title">Reactpardy</h1>
           {nav}
         </ul>
       </nav>

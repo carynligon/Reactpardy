@@ -1,17 +1,26 @@
 nav {
-  background: $primary-pink;
-  margin-bottom: 50px;
+  background: #fefefe;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $gray;
   ul {
     display: inline-block;
     padding: 0;
     li {
       display: inline-block;
-      padding: 20px 30px;
+      padding: 20px 30px 35px 20px;
+      margin: 5px 0 0 5px;
+      width: 40px;
+      font-family: sans-serif;
       &:hover {
         background: darken($primary-pink, 5%);
       }
-      a {
+      &:hover a {
         color: $white;
+      }
+      a {
+        position: absolute;
+        z-index: 5;
+        color: $primary-pink;
       }
     }
   }
@@ -22,6 +31,24 @@ ul:first-child {
 }
 
 #login-btns {
-  float: right;
   padding: 0;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
+
+#title {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 15px 0 0 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  z-index: 1;
+  &:hover{
+    background: none;
+  }
 }
