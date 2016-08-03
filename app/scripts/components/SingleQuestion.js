@@ -7,7 +7,6 @@ import store from '../store';
 
 const SingleQuestion = React.createClass({
   selectQuestion: function(e) {
-    console.log(this.props);
     let id = this.props.id;
     hashHistory.push(`/${this.props.id}`);
     document.getElementById(`${this.props.id}`).style.display = 'none';

@@ -17,7 +17,7 @@ const CategoryModel = Backbone.Model.extend({
           if (question.value === pointDiff) {
             pointDiff += 200;
             return question;
-          } 
+          }
         });
         if (questionArr.length === 5) {
           category.clues = questionArr;

@@ -8,6 +8,7 @@ import store from '../store';
 
 const QuestionModal = React.createClass({
   getInitialState: function() {
+    console.log(store.categoriesCollection);
     return {
       data: {},
       result: null
