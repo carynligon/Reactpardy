@@ -13,6 +13,7 @@ const Category = React.createClass({
           answer={question.answer}
           value={question.value}
           id={question.id}
+          categoryId={question.category_id}
           key={i}/>
       });
     }

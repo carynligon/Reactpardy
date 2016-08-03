@@ -21,8 +21,8 @@ const Game = React.createClass({
     let categories = this.state.categories.map((category, i) => {
       return <Category
         key={i}
-        clues={category.category.clues}
-        title={category.category.title}/>;
+        clues={category.clues}
+        title={category.title}/>;
     });
     return (
       <div id="gameboard-wrapper">
