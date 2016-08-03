@@ -8,9 +8,15 @@ import store from '../store';
 
 const QuestionModal = React.createClass({
   getInitialState: function() {
-    console.log(store.categoriesCollection);
+    let question;
+    store.categoriesCollection.each((model) => {
+      let clues = model.get('clues');
+      let question = clues.forEach((clue) => {
+        return clue.id === this.props.params.question;
+      });
+    });
     return {
-      data: {},
+      data: question,
       result: null
     }
   },
@@ -55,7 +61,6 @@ const QuestionModal = React.createClass({
     hashHistory.push('/');
   },
   render: function() {
-    console.log(this.state);
     let question;
     let result;
     if (this.state.data.question) {

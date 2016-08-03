@@ -12,8 +12,8 @@ const SingleQuestion = React.createClass({
       return clue.id === this.props.id;
     });
     console.log(question[0].question);
-    // hashHistory.push(`/${this.props.id}`);
-    // document.getElementById(`${this.props.id}`).style.display = 'none';
+    hashHistory.push(`/${this.props.id}`);
+    document.getElementById(`${this.props.id}`).style.display = 'none';
   },
   render: function() {
     return(
