@@ -11,7 +11,7 @@ const CategoriesCollection = Backbone.Collection.extend({
     _(6).times(() => {
       this.add({});
     });
-    
+
     this.each((categoryModel) => {
       categoryModel.getId(Math.floor(Math.random() * 18400));
     });

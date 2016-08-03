@@ -14,11 +14,7 @@ const QuestionModal = React.createClass({
     }
   },
   componentDidMount: function() {
-    let id = this.props.params.question;
-    console.log(store.questionCollection.data.length);
-    if (store.questionCollection.data.get(id)) {
-      this.setState({data: store.questionCollection.data.get(id).toJSON()});
-    }
+    this.setState({data: store.categoriesCollection.get(this.props.params.id)});
   },
   validateAnswer: function(e) {
     e.preventDefault();
@@ -51,13 +47,14 @@ const QuestionModal = React.createClass({
     }
   },
   goToGame: function() {
-    store.questionCollection.data.remove(this.model);
-    if (store.questionCollection.data.length === 0) {
+    store.categoriesCollection.remove(this.model);
+    if (store.categoriesCollection.length === 0) {
       document.getElementById('results-page').style.display = 'block';
     }
     hashHistory.push('/');
   },
   render: function() {
+    console.log(this.state);
     let question;
     let result;
     if (this.state.data.question) {
