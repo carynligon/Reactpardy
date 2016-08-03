@@ -1,12 +1,10 @@
-import QuestionCollection from './collections/QuestionCollection';
+import CategoriesCollection from './collections/CategoriesCollection';
 import Score from './models/Score';
 import UserCollection from './collections/UserCollection';
 
 
 let store = {
-  questionCollection: {
-    data: new QuestionCollection()
-  },
+  categoriesCollection: new CategoriesCollection(),
   score: new Score(),
   userCollection: new UserCollection()
 }
