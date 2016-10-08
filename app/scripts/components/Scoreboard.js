@@ -8,15 +8,22 @@ const Scoreboard = React.createClass({
   getInitialState: function() {
     return store.score.toJSON();
   },
+  changeScore: function() {
+    this.setState(store.score.toJSON());
+    console.log('changed');
+  },
   componentDidMount: function() {
-    store.score.on('change', () => {
-      this.setState(store.score.toJSON());
-      console.log('changed');
-      console.log(this.state);
-    });
+    store.score.on('change', this.changeScore);
     store.score.get('correct');
   },
+  componentWillUnmount() {
+    store.score.off('change', this.changeScore);
+  },
   render: function() {
+    console.log(this.state);
+    if (this.state.correct + this.state.incorrect === 4) {
+      console.log('4');
+    }
     let sign;
     let styles;
     if (this.state.money < 0) {

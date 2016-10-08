@@ -13,6 +13,7 @@ const router = (
     <Route path="/login" component ={Login} />
     <Route path="/signup" component ={Signup} />
     <Route path="/:question" component={QuestionModal}/>
+    <Route path="/results" component={Results}/>
   </Route>
   </Router>
 );
