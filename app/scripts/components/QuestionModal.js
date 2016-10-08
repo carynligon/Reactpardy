@@ -64,7 +64,6 @@ const QuestionModal = React.createClass({
     hashHistory.push('/');
   },
   render: function() {
-    console.log(this.state);
     let styles = {
       display: 'none'
     };

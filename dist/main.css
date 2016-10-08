@@ -153,7 +153,6 @@ nav {
     padding: 0; }
     nav ul li {
       display: inline-block;
-      padding: 20px 30px 20px 20px;
       margin: 5px 0 0 5px;
       width: 40px;
       font-family: sans-serif; }
@@ -177,6 +176,10 @@ ul:first-child {
   position: absolute;
   right: 0;
   z-index: 5; }
+  #login-btns li {
+    padding: 20px 30px 40px 20px; }
+  #login-btns #logout {
+    padding: 20px 30px 20px 20px; }
 
 #title {
   position: absolute;

@@ -34,7 +34,7 @@ const Nav = React.createClass({
     } else {
       nav =
       <ul id="login-btns">
-        <li onClick={this.logout}>Logout</li>
+        <li id="logout" onClick={this.logout}>Logout</li>
       </ul>
     }
     return (
