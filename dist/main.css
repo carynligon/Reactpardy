@@ -174,7 +174,7 @@ ul:first-child {
 #login-btns {
   padding: 0;
   position: absolute;
-  right: 0;
+  right: 5px;
   z-index: 5; }
   #login-btns li {
     padding: 20px 30px 40px 20px; }
@@ -221,7 +221,8 @@ ul:first-child {
     padding: 15px;
     margin-bottom: 0; }
     .signup-form input[type="submit"]:hover, .login-form input[type="submit"]:hover {
-      background: #af2150; }
+      background: #af2150;
+      cursor: pointer; }
   .signup-form p, .login-form p {
     color: #fff;
     font-size: 0.8rem; }
