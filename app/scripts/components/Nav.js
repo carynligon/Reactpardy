@@ -40,7 +40,7 @@ const Nav = React.createClass({
     return (
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
+          <li id="home-btn"><Link to="/">Home</Link></li>
           <h1 id="title">Reactpardy</h1>
           {nav}
         </ul>

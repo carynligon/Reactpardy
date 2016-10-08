@@ -8,18 +8,18 @@ import currentQuestion from '../models/CurrentQuestion';
 
 const SingleQuestion = React.createClass({
   selectQuestion: function(e) {
-    // let category = store.categoriesCollection.get(this.props.categoryId);
-    // let question = category.get('clues').filter((clue) => {
-    //   return clue.id === this.props.id;
-    // });
-    currentQuestion.set({
-      question: this.props.question,
-      answer: this.props.answer,
-      value: this.props.value,
-      categoryId: this.props.categoryId
-    });
-    hashHistory.push(`/${this.props.id}`);
-    document.getElementById(`${this.props.id}`).firstChild.style.display = 'none';
+    console.dir(e.target.parentNode.classList);
+    if (e.target.parentNode.classList.value.indexOf('disable') === -1) {
+      currentQuestion.set({
+        question: this.props.question,
+        answer: this.props.answer,
+        value: this.props.value,
+        categoryId: this.props.categoryId
+      });
+      e.target.parentNode.classList.add('disable');
+      hashHistory.push(`/${this.props.id}`);
+      document.getElementById(`${this.props.id}`).firstChild.style.display = 'none';
+    }
   },
   render: function() {
     return(

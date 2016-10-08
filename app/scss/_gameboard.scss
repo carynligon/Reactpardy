@@ -23,6 +23,7 @@
       &:hover {
         background: none;
         color: $black;
+        cursor: initial;
       }
     }
     li {
@@ -38,9 +39,17 @@
         background: $primary-pink;
         transition: background 0.5s ease-in-out;
         color: $white;
+        cursor: pointer;
       }
       h2 {
         margin: 0;
+      }
+    }
+    .disable {
+      &:hover {
+        cursor: initial;
+        background: rgba(#fff, .5);
+        color: $black;
       }
     }
   }
@@ -76,6 +85,7 @@
     &:hover {
       background: none;
       color: $primary-pink;
+      cursor: pointer;
     }
   }
   form {
@@ -103,5 +113,8 @@
     margin-left: 2%;
     border: none;
     padding: 7px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
