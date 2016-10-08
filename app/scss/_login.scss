@@ -27,6 +27,7 @@
     margin-bottom: 0;
     &:hover {
       background: darken($primary-pink, 10%);
+      cursor: pointer;
     }
   }
   p {
