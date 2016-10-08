@@ -1,5 +1,6 @@
 nav {
   background: #fefefe;
+  height: 70px;
   margin-bottom: 30px;
   border-bottom: 1px solid $gray;
   ul {
@@ -7,12 +8,13 @@ nav {
     padding: 0;
     li {
       display: inline-block;
-      padding: 20px 30px 35px 20px;
+      padding: 20px 30px 20px 20px;
       margin: 5px 0 0 5px;
       width: 40px;
       font-family: sans-serif;
       &:hover {
         background: darken($primary-pink, 5%);
+        cursor: pointer;
       }
       &:hover a {
         color: $white;
@@ -22,6 +24,9 @@ nav {
         z-index: 5;
         color: $primary-pink;
       }
+    }
+    #home-btn {
+      padding: 20px 30px 40px 20px;
     }
   }
 }

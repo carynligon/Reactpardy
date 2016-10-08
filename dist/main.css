@@ -22,7 +22,8 @@
       color: #8c8c8c; }
       #gameboard ul li:first-child:hover {
         background: none;
-        color: #373635; }
+        color: #373635;
+        cursor: initial; }
     #gameboard ul li {
       list-style-type: none;
       height: 50px;
@@ -35,9 +36,14 @@
       #gameboard ul li:hover {
         background: #d72c65;
         transition: background 0.5s ease-in-out;
-        color: #fff; }
+        color: #fff;
+        cursor: pointer; }
       #gameboard ul li h2 {
         margin: 0; }
+    #gameboard ul .disable:hover {
+      cursor: initial;
+      background: rgba(255, 255, 255, 0.5);
+      color: #373635; }
 
 .modal-container {
   position: fixed;
@@ -66,7 +72,8 @@
     color: #fff; }
     .modal-container #backto-game:hover {
       background: none;
-      color: #d72c65; }
+      color: #d72c65;
+      cursor: pointer; }
   .modal-container form {
     width: 650px;
     height: 300px;
@@ -88,6 +95,8 @@
     margin-left: 2%;
     border: none;
     padding: 7px; }
+    .user-answer #submit-user-guess:hover {
+      cursor: pointer; }
 
 .scoreboard {
   color: #373635;
@@ -136,6 +145,7 @@
 
 nav {
   background: #fefefe;
+  height: 70px;
   margin-bottom: 30px;
   border-bottom: 1px solid #dddada; }
   nav ul {
@@ -143,18 +153,21 @@ nav {
     padding: 0; }
     nav ul li {
       display: inline-block;
-      padding: 20px 30px 35px 20px;
+      padding: 20px 30px 20px 20px;
       margin: 5px 0 0 5px;
       width: 40px;
       font-family: sans-serif; }
       nav ul li:hover {
-        background: #c4255a; }
+        background: #c4255a;
+        cursor: pointer; }
       nav ul li:hover a {
         color: #fff; }
       nav ul li a {
         position: absolute;
         z-index: 5;
         color: #d72c65; }
+    nav ul #home-btn {
+      padding: 20px 30px 40px 20px; }
 
 ul:first-child {
   width: 100%; }
